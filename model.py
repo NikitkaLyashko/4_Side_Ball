@@ -21,7 +21,7 @@ def drive_rect():
 
     if rect_ball.bottom>=800:
         rect_ball.bottom=800
-        px_y=-3
+        px_y=-px_y
         octaloc_ottalk_def()
 
 
@@ -70,14 +70,28 @@ def otbitie():
         px_y =-px_y
         octaloc_ottalk_def()
 
+# px_y=3
+# px_x=-5
+znak_x=1
+znak_y=1
 
 def octaloc_ottalk_def():
     global octaloc_ottalk,px_x,px_y
     octaloc_ottalk -= 1
     if octaloc_ottalk <= 0:
-        octaloc_ottalk = 10
-        px_y=-4
-        px_x=+4
+        octaloc_ottalk = 5
+        print(px_x, px_y)
+
+        if px_x>0:
+            px_x+=znak_x
+        if px_x<0:
+            px_x-=znak_x
+
+
+        if px_y>0:
+            px_y+=znak_y
+        if px_y<0:
+            px_y-=znak_y
 
 
 
