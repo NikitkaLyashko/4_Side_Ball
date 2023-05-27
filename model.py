@@ -5,16 +5,16 @@ rect_ball=pygame.Rect(300, 300, 70, 70)
 rect_plat=pygame.Rect(0,770,800,30)
 
 
-octaloc_ottalk=2
+octaloc_ottalk=5
 polojenie_pl="down"
 px_y=3
 px_x=-5
-
-
+oct_live=3
+slid="menu"
 
 
 def drive_rect():
-    global px_y, px_x, octaloc_ottalk
+    global px_y, px_x, octaloc_ottalk, oct_live,slid
 
     rect_ball.left+=px_x
     rect_ball.bottom+=px_y
@@ -23,24 +23,34 @@ def drive_rect():
         rect_ball.bottom=800
         px_y=-px_y
         octaloc_ottalk_def()
+        oct_live-=1
+
 
 
     if rect_ball.top<=0:
         rect_ball.top=0
         px_y=-px_y
         octaloc_ottalk_def()
+        oct_live -= 1
 
 
     if rect_ball.left<=0:
         rect_ball.left=0
         px_x=-px_x
         octaloc_ottalk_def()
+        oct_live -= 1
 
 
     if rect_ball.right>=800:
         rect_ball.right=800
         px_x=-px_x
         octaloc_ottalk_def()
+        oct_live -= 1
+
+    if oct_live<=0:
+        oct_live=3
+        slid="menu"
+
 
 
     otbitie()
@@ -82,6 +92,7 @@ def octaloc_ottalk_def():
         octaloc_ottalk = 5
         print(px_x, px_y)
 
+
         if px_x>0:
             px_x+=znak_x
         if px_x<0:
@@ -92,8 +103,6 @@ def octaloc_ottalk_def():
             px_y+=znak_y
         if px_y<0:
             px_y-=znak_y
-
-
 
 
 def platforma_right():

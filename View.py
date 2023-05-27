@@ -15,6 +15,10 @@ def background():
     text_on_wind = text.render("Осталось отталкиваний:"+str(model.octaloc_ottalk), True, [134, 213, 42])
     window.blit(text_on_wind, [800-text_on_wind.get_width(), 30])
 
+    livs=text.render("Осталось жизней:"+str(model.oct_live),True,[134, 100, 222])
+    window.blit(livs,[800-livs.get_width(),60])
+
+
 
 
 
