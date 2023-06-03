@@ -18,6 +18,9 @@ def background():
     livs=text.render("Осталось жизней:"+str(model.oct_live),True,[134, 100, 222])
     window.blit(livs,[800-livs.get_width(),60])
 
+    level=text.render("Уроаень:"+str(model.level),True,[134, 100, 222])
+    window.blit(level,[800-level.get_width(),90])
+
 
 
 

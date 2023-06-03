@@ -11,6 +11,7 @@ px_y=3
 px_x=-5
 oct_live=3
 slid="menu"
+level=1
 
 
 def drive_rect():
@@ -55,11 +56,12 @@ def drive_rect():
 
     otbitie()
 def otbitie():
-    global px_y, px_x,polojenie_pl,octaloc_ottalk
+    global px_y, px_x,polojenie_pl,octaloc_ottalk,level
     if rect_ball.left<=rect_plat.right and polojenie_pl=="left":
         rect_ball.left=rect_plat.right
         px_x = -px_x
         octaloc_ottalk_def()
+
 
 
 
@@ -69,10 +71,12 @@ def otbitie():
         octaloc_ottalk_def()
 
 
+
     if rect_ball.top<=rect_plat.bottom and polojenie_pl=="top":
         rect_ball.top=rect_plat.bottom
         px_y =-px_y
         octaloc_ottalk_def()
+
 
 
     if rect_ball.bottom>=rect_plat.top and polojenie_pl=="down":
@@ -80,16 +84,18 @@ def otbitie():
         px_y =-px_y
         octaloc_ottalk_def()
 
+
 # px_y=3
 # px_x=-5
 znak_x=1
 znak_y=1
 
 def octaloc_ottalk_def():
-    global octaloc_ottalk,px_x,px_y
+    global octaloc_ottalk,px_x,px_y,level
     octaloc_ottalk -= 1
     if octaloc_ottalk <= 0:
         octaloc_ottalk = 5
+        level+=1
         print(px_x, px_y)
 
 
