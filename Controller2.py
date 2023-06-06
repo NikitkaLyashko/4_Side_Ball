@@ -9,8 +9,6 @@ def controller():
             exit()
 
         if cobitie.type==pygame.KEYDOWN and cobitie.key==pygame.K_SPACE:
-            model.octaloc_ottalk=5
-            model.px_y=3
-            model.px_x=-5
+            model.reset()
             model.slid="game"
 

@@ -12,6 +12,16 @@ px_x=-5
 oct_live=3
 slid="menu"
 level=1
+level_2=1
+
+def reset():
+    global octaloc_ottalk,px_x,px_y,level,oct_live
+    octaloc_ottalk = 5
+    oct_live = 3
+    px_y = 3
+    px_x = -5
+    level=1
+    rect_ball.center=[400,400]
 
 
 def drive_rect():
@@ -49,7 +59,6 @@ def drive_rect():
         oct_live -= 1
 
     if oct_live<=0:
-        oct_live=3
         slid="menu"
 
 
@@ -91,12 +100,15 @@ znak_x=1
 znak_y=1
 
 def octaloc_ottalk_def():
-    global octaloc_ottalk,px_x,px_y,level
+    global octaloc_ottalk,px_x,px_y,level,level_2
     octaloc_ottalk -= 1
     if octaloc_ottalk <= 0:
         octaloc_ottalk = 5
         level+=1
-        print(px_x, px_y)
+        level_2=level
+
+
+
 
 
         if px_x>0:
