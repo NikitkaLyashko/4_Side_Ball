@@ -12,7 +12,13 @@ px_x=-5
 oct_live=3
 slid="menu"
 level=1
-level_2=1
+
+s=open("max_levl","r")
+read=s.read()
+s.close()
+
+level_2=int(read)
+
 
 def reset():
     global octaloc_ottalk,px_x,px_y,level,oct_live
@@ -105,7 +111,17 @@ def octaloc_ottalk_def():
     if octaloc_ottalk <= 0:
         octaloc_ottalk = 5
         level+=1
-        level_2=level
+
+
+
+        if level>=level_2:
+
+            level_2=level
+
+            s= open("max_levl","w+")
+            print(level_2, file=s)
+            s.close()
+
 
 
 
