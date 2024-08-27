@@ -4,7 +4,7 @@ import model
 from pygame import display
 pygame.init()
 text = pygame.font.SysFont("arial", 30, False, True)
-
+window = display.set_mode([800, 800])
 def background():
 
     window.fill([255,125,225])
@@ -28,4 +28,4 @@ def background():
 
     display.flip()
 
-window = display.set_mode([800, 800])
+
